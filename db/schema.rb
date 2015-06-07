@@ -13,14 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20150529005216) do
 
-  create_table "tacos", force: :cascade do |t|
-    t.string   "name"
-    t.string   "price"
-    t.string   "image"
-    t.string   "description"
-    t.string   "rating"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "products", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.decimal  "price",                     precision: 8, scale: 2
+    t.string   "image",       limit: 255
+    t.text     "description", limit: 65535
+    t.string   "rating",      limit: 255
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
   end
 
 end

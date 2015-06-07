@@ -8,7 +8,7 @@
           <div class="taco_single">
             <h2><%= taco.name %></h2>
             <p>Price: <%= taco.price %></p>
-            <a href="/tacos/<%= taco.id %>" title="View Taco"><img src="<%= taco.image %>" alt="<%= taco.name %>" class="img-responsive taco_single_image"></a>
+            <a href="/products/<%= taco.id %>" title="View Taco"><img src="<%= taco.image %>" alt="<%= taco.name %>" class="img-responsive taco_single_image"></a>
             <p>Description: <%= taco.description %></p>
             <p>Rating: <span class="rating"><%= taco.rating %></span></p>
           </div>
@@ -18,4 +18,4 @@
 
       </div>
     </section>
-    <%= link_to "Add New Recipe", "tacos/new" %>
+    <%= link_to "Add New Recipe", "products/new" %>
