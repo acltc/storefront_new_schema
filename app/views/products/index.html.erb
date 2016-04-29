@@ -1,16 +1,35 @@
     <section>
+    <div>
+      <%= link_to "Price Lowest To Highest", "/products?sort=price&sort_order=asc" %>
+    </div>
+    <div>
+      <%= link_to "Price Highest To Lowest", "/products?sort=price&sort_order=desc" %>
+    </div>
+    <div>
+      <%= link_to "Discounted Items", "/products?discount=true" %>
+    </div>
+    <div>
+      <%= link_to "I'm feeling lucky...", "/products/random" %>
+    </div>
+    <%= form_tag "/search", method: :post do %>
+      <%= label_tag :search %>
+      <%= text_field_tag :search %>
+      <%= submit_tag "Search" %>
+    <% end %>
+
+    
       <div class="row">
 
       <!--Make magic happen here Ruby!-->
-      <% @tacos.each do |taco| %>
+      <% @products.each do |product| %>
 
         <div class="col-sm-4">
           <div class="taco_single">
-            <h2><%= taco.name %></h2>
-            <p>Price: <%= taco.price %></p>
-            <a href="/products/<%= taco.id %>" title="View Taco"><img src="<%= taco.image %>" alt="<%= taco.name %>" class="img-responsive taco_single_image"></a>
-            <p>Description: <%= taco.description %></p>
-            <p>Rating: <span class="rating"><%= taco.rating %></span></p>
+            <h2><%= product.name %></h2>
+            <p>Price: <%= product.price %></p>
+            <a href="/products/<%= product.id %>" title="View product"><img src="<%= product.image %>" alt="<%= product.name %>" class="img-responsive taco_single_image"></a>
+            <p>Description: <%= product.description %></p>
+            <p>Rating: <span class="rating"><%= product.rating %></span></p>
           </div>
         </div>
       <% end %>
