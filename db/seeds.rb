@@ -1,3 +1,16 @@
+User.create!([
+  {email: "mark@anyonecanlearntocode.com", password: "password"}
+])
+CartedProduct.create!([
+  {product_id: 1, quantity: 4, order_id: 1},
+  {product_id: 1, quantity: 4, order_id: 1},
+  {product_id: 2, quantity: 3, order_id: 1},
+  {product_id: 5, quantity: 3, order_id: 2}
+])
+Order.create!([
+  {user_id: 1, subtotal: "1018.0", tax: "91.62", total: "1109.62", completed: true},
+  {user_id: 1, subtotal: nil, tax: nil, total: nil, completed: false}
+])
 Product.create!([
   {name: "Cochinita Pibil", price: 122, image: "http://www.foodpeoplewant.com/wp-content/uploads/2009/09/Tacos-De-Cochinita-Pibil-1024x686.jpg", description: "Mouthwatering, slow-cooked pork on a corn tortilla, served with queso fresco, pickled onions y cilantro!", rating: nil},
   {name: "Al Pastor", price: 14, image: "http://upload.wikimedia.org/wikipedia/commons/b/b5/01_Tacos_al_Pastor.jpg", description: "Succulent, smoky, earthy, spiced and grilled pork strips seasoned with adobo seasoning. Served on a corn tortilla with cilantro y cebollas", rating: nil},
